@@ -1,0 +1,21 @@
+TO BUILD IMAGE:
+
+docker build -f Dockerfile.dev -t reactfrontend:dev .
+
+
+TO SPIN UP CONTAINER:
+
+docker run -it --rm -v ${PWD}:/app -v /app/node_modules -p 3001:3000 -e CHOKIDAR_USEPOLLING=true reactfrontend:dev
+
+$ docker run \                                    # Creates and runs new container
+    -it \                                           # Starts container in interactive mode (otherwise container will exit with latest react version)
+    --rm \                                          # Removes contaner and volumes after app exits
+    -v ${PWD}:/react_front_end \                    # Mounts the code into the container at "/app"
+    -v /react_front_end/node_modules \              # Configures a volume
+    -p 3001:3000 \                                  # Exposes port 3000 to other containers on the same network and port 3001 to the host 
+    -e CHOKIDAR_USEPOLLING=true \                   # Enables a polling mechanism so that hot-reloading will work
+    reactfrontend:dev                                      # Specify container image to run
+
+
+
+
