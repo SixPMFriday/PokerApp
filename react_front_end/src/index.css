@@ -12,6 +12,15 @@ html, body {
   margin: 0px;
 }
 
+html {
+  min-height: 100%;
+  background-image: url(./img/BgLight.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
 /*--------------------------------------------------------------------------------*/
 /* Default (will apply to smallest screen and larger unless overridden) */
 
@@ -33,10 +42,12 @@ html, body {
     ". h h h ."
     ". . c . ."
     "f f f f f";
+  
+    
 }
 
 .grid_template_header {
-  background-color: lightcoral;
+  /* background-color: lightcoral; */
   grid-area: h;
   display: flex;
   justify-content: space-between;
@@ -59,7 +70,7 @@ html, body {
 
 
 .grid_template_content {
-  background-color: grey;
+  /* background-color: grey; */
   grid-area: c;
   display: flex;
   flex-direction: column;
@@ -71,68 +82,10 @@ html, body {
 
 
 .grid_template_footer {
-  background-color: lightblue;
+  /* background-color: lightblue; */
   grid-area: f;
   display: flex;
   justify-content: space-between;
 }
 
 
-
-
-/*   TICKER */
-
-@-webkit-keyframes ticker {
-  0% {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-    visibility: visible;
-  }
-  100% {
-    -webkit-transform: translate3d(-100%, 0, 0);
-    transform: translate3d(-100%, 0, 0);
-  }
-}
-@keyframes ticker {
-  0% {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-    visibility: visible;
-  }
-  100% {
-    -webkit-transform: translate3d(-100%, 0, 0);
-    transform: translate3d(-100%, 0, 0);
-  }
-}
-.ticker-wrap {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  overflow: hidden;
-  height: 4rem;
-  background-color: rgba(0, 0, 0, 0.9);
-  padding-left: 100%;
-  box-sizing: content-box;
-}
-.ticker-wrap .ticker {
-  display: inline-block;
-  height: 4rem;
-  line-height: 4rem;
-  white-space: nowrap;
-  padding-right: 100%;
-  box-sizing: content-box;
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-  -webkit-animation-timing-function: linear;
-  animation-timing-function: linear;
-  -webkit-animation-name: ticker;
-  animation-name: ticker;
-  -webkit-animation-duration: 30s;
-  animation-duration: 30s;
-}
-.ticker-wrap .ticker__item {
-  display: inline-block;
-  padding: 0 2rem;
-  font-size: 2rem;
-  color: white;
-}

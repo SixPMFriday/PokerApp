@@ -72,3 +72,12 @@ Storing pssswords securely
     - https://medium.com/swlh/securing-your-database-e22b1210d046
 
 
+
+
+
+
+Adding SSL Certificate to PAge:
+-------------------------
+- https://blog.hubspot.com/marketing/what-is-ssl
+- "Let's Encrypt offers certificates at no cost, but I would strongly recommend that you have someone knowledgeable about the DNS and technical setup of your website to help."
+    - https://letsencrypt.org/
