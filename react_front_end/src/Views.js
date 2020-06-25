@@ -6,7 +6,7 @@ function NavigationMenu() {
     return (
       <>
         <div class="navmenu">
-            <h4>Nav</h4>
+            <h2>Nav</h2>
             <ul role="menubar">
             <li><Link to="/" role="menuitem">Home</Link></li>
             <li><Link to="/register" role="menuitem">Register</Link></li>
@@ -21,7 +21,7 @@ function NavigationMenu() {
     return (
       <>
         <div class="footer">
-            <p>Poker Champ! App!</p>
+            <p>www.pokerchamp.app v0.01</p>
         </div>
       </>
     );
@@ -36,12 +36,17 @@ export function Welcome() {
         <>
         <div class = "grid_template_main">
             <div class="grid_template_header">
-                <h1>Welcome, dude</h1>
+                <h1>Play Like a Champ!</h1>
                 <NavigationMenu/>
             </div>
             <div class="grid_template_content">
-                <Link to="/register" role="menuitem">Sign-Up</Link>
-                <Link to="/login" role="menuitem">Login</Link>
+                <p> 
+                    Poker Champ is a WIP web application which will allow people to sign-up and play poker with each other online in real-time.
+                    <br/> <br/>
+                    It's the best thing since subscription bread!
+                </p>
+                <Link to="/register" role="menuitem" class="welcome_SignUp">Sign-Up</Link>
+                <Link to="/login" role="menuitem" class="welcome_Login">Login</Link>
             </div>
             <div class="grid_template_footer">
                 <Footer/>
@@ -55,7 +60,7 @@ export function Welcome() {
 export function Login() {
   return (
       <>
-        <div class = "grid_container_main">
+        <div class = "grid_template_main">
             <div class="grid_template_header">
                 <h1>Login</h1>
                 <NavigationMenu/>
@@ -88,7 +93,7 @@ export function Login() {
 export function Register() {
     return (
     <>
-        <div class = "grid_container_main">
+        <div class = "grid_template_main">
             <div class="grid_template_header">
                 <h1>Sign Up!</h1>
                 <NavigationMenu/>
@@ -124,7 +129,7 @@ export function Register() {
 export function Game() {
     return (
     <>
-        <div class = "grid_container_main">
+        <div class = "grid_template_main">
             <div class="grid_template_header">
                 <h1>Game Homepage</h1>
                 <NavigationMenu/>
