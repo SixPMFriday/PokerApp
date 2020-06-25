@@ -18,4 +18,57 @@ $ docker run \                                    # Creates and runs new contain
 
 
 
+docker run --name pcfrontend -p 3000:80 pokerappfrontend:dev  
+
+
+
+ON REACT
+----------------------------
+
+
+
+
+docker build -f Dockerfile.dev -t pokerappfrontend:dev .
+
+
+docker run -p 80:80 pokerappfrontend:dev
+
+
+To create production build:
+------------------------------------
+
+docker build -f Dockerfile.dev -t pokerappfrontend:prod
+
+docker run -p 80:80 pokerappfrontend:prod
+
+
+
+-------------------
+
+// Js functions with fluent syntax which apply response page layouts to build WebPages
+// Page()
+
+
+Content = {
+    "ButtonMenu" = [Welcome, About, Login]
+    "Header" = "Poker Champ!"
+    "Button" = "Register"
+}
+
+
+
+
+
+Storing pssswords securely
+-----------------------
+-- password storage
+-- salt passwords, protect timing attacks, etc. 
+    - https://auth0.com/blog/adding-salt-to-hashing-a-better-way-to-store-passwords/
+    - https://www.meziantou.net/how-to-store-a-password-in-a-web-application.htm
+
+
+-- Use MongoDb atlas? (Free up to 5 gb)
+    - https://medium.com/swlh/creating-connecting-a-mongodb-database-and-node-js-server-to-a-front-end-6a53d400ae6a
+    - https://medium.com/swlh/securing-your-database-e22b1210d046
+
 
