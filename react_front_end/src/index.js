@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Route, BrowserRouter as Router } from "react-router-dom";
 
+import './index.css';
+
 import {
   Welcome,
   Login,
@@ -20,4 +22,9 @@ function Routing() {
   );
 }
 
-ReactDOM.render(<Routing />, document.getElementById("root"));
+ReactDOM.render(  
+  <React.StrictMode>
+    <Routing />
+  </React.StrictMode>, 
+  document.getElementById("root")
+);
