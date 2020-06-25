@@ -42,8 +42,6 @@ html {
     ". h h h ."
     ". . c . ."
     "f f f f f";
-  
-    
 }
 
 .grid_template_header {
@@ -67,8 +65,6 @@ html {
   list-style-type: none;
 }
 
-
-
 .grid_template_content {
   /* background-color: grey; */
   grid-area: c;
@@ -78,8 +74,9 @@ html {
   justify-content: space-evenly;
 }
 
-
-
+.grid_template_content > a:hover{
+  border:1px solid red;  
+ }
 
 .grid_template_footer {
   /* background-color: lightblue; */
