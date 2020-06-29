@@ -9,7 +9,6 @@
 
 html, body {
   box-sizing: border-box;
-  margin: 0px;
 }
 
 /*  BACKGROUND IMAGE */
@@ -23,7 +22,7 @@ html {
 }
 
 /*--------------------------------------------------------------------------------*/
-/* Default (will apply to smallest screen and larger unless overridden) */
+/* Default Layout (will apply to smallest screen and larger unless overridden) */
 
 .grid_template_main {
   display: grid;
@@ -45,8 +44,6 @@ html {
     "f f f f f";
 }
 
-
-
 .grid_template_header {
   grid-area: h;
   
@@ -57,12 +54,28 @@ html {
   font-weight: bolder;
   -webkit-text-fill-color: #ff7d00; /* Will override color (regardless of order) */
   -webkit-text-stroke-color: #2e1803;
-
   
   padding-top: 2rem;
   padding-bottom: 1rem;
   
 }
+
+.grid_template_footer {
+  grid-area: f;
+  
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: end;
+  align-items: center;
+  padding-right: 2%;
+
+  background-color: #162116;
+  
+  font-family: "Garamond";
+  color: white;
+  font-size: 0.75rem;
+}
+
 
 .grid_template_header > h1 {
   align-self: end;
@@ -97,7 +110,6 @@ html {
   align-items: center;
   justify-content: space-evenly;
 
-  
   font-family: "Comic Sans MS";
   font-weight: light;
   -webkit-text-fill-color: #ff7d00; /* Will override color (regardless of order) */
@@ -110,9 +122,17 @@ html {
   background-color: lightslategrey;
   border-radius: 30px 30px 30px 30px;
   
-  box-shadow: 0px -5px 10px #453629;
+  box-shadow: 0px
+   -5px 10px #453629;
 }
-.grid_template_content > a {
+.home_signup_login_buttons {
+  width: 100%;
+  padding-top: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.home_signup_login_buttons > a {
   padding: 4rem;
   border:1px solid #2e1803;  
   background-color: lightgrey;
@@ -126,41 +146,67 @@ html {
 
   transition: all 0.15s ease-in-out;
  }
- .grid_template_content > a.welcome_SignUp {
-    box-shadow: 0px 2px 10px #453629;
- }
- .grid_template_content > a.welcome_Login { 
-    box-shadow: 0px 8px 10px #453629;
- }
- .grid_template_content > a:link {
+
+.home_signup_login_buttons > a.welcome_SignUp {
+  box-shadow: 0px 2px 10px #453629;
+}
+.home_signup_login_buttons > a.welcome_Login { 
+  box-shadow: 0px 8px 10px #453629;
+}
+.home_signup_login_buttons > a:link {
+  text-decoration: none;
+}
+.home_signup_login_buttons > a:visited {
     text-decoration: none;
   }
-  .grid_template_content > a:visited {
-     text-decoration: none;
-   }
-  .grid_template_content > a:hover {
-    text-decoration: underline;
-    
-    padding: 5rem;
-    font-size: 2.5rem;
-    font-weight: bolder;
-  }
-
-  
-.grid_template_footer {
-  grid-area: f;
-  
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: end;
-  align-items: center;
-  padding-right: 2%;
-
-  background-color: #162116;
-  
-  font-family: "Garamond";
-  color: white;
-  font-size: 0.75rem;
+.home_signup_login_buttons > a:hover{
+  text-decoration: underline;
+  background-color: darkslategray;
 }
 
 
+/*  FORMS */
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 50px;
+  border: 5px solid #2e1803;
+  background-color: lightslategrey;
+  border-radius: 30px 30px 30px 30px;
+  box-shadow: 0px -5px 10px #453629;
+}
+form > button {
+  max-width: 75%;
+  min-width: 25%;
+  padding: 10px;
+  font-size: 1.2rem;
+  align-self: center;
+  font-weight: bold;
+  -webkit-text-fill-color: black;
+  background-color: lightgray;
+  border-radius: 25px 25px 25px 25px;
+  transition: all 0.15s ease-in-out;
+}
+form > button:hover {
+  text-decoration: underline;
+  background-color: #ff7d00;
+}
+label {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  -webkit-text-fill-color: black;
+}
+input {
+  height: 1.5rem;
+  max-width: 100%;
+  min-width: 25%;
+  margin-left: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+ 

@@ -45,8 +45,10 @@ export function Welcome() {
                     <br/> <br/>
                     It's the best thing since subscription bread!
                 </p>
-                <Link to="/register" role="menuitem" class="welcome_SignUp">Sign-Up</Link>
-                <Link to="/login" role="menuitem" class="welcome_Login">Login</Link>
+                <div class="home_signup_login_buttons">
+                    <Link to="/register" role="menuitem" class="welcome_SignUp">Sign-Up</Link>
+                    <Link to="/login" role="menuitem" class="welcome_Login">Login</Link>
+                </div>
             </div>
             <div class="grid_template_footer">
                 <Footer/>
@@ -67,17 +69,15 @@ export function Login() {
             </div>
             <div class="grid_template_content">
                 <form method="POST">
-                    <label for="email">Email
+                    <label for="email">Email:
                         <input type="email" id="email" name="email" placeholder="Email" required="true" autofocus="true"/>
                     </label>
-                    <br/>
-                    <label for="username">Username
+                    <label for="username">Username:
                         <input type="text" id="username" name="username" placeholder="Username" required="false"/>
                     </label>
-                    <br/>
-                    <label for="password">Password</label>
+                    <label for="password">Password:
                         <input type="password" id="password" name="password" placeholder="Password" required="true"/>
-                    <br/>
+                    </label>
                     <button type="submit">Sign In</button>
                 </form>
             </div>
@@ -100,20 +100,16 @@ export function Register() {
             </div>
             <div class="grid_template_content">
                 <form method="POST">
-                    <label for="email">Email
+                    <label for="email">Email:
                         <input type="email" id="email" name="email" placeholder="Email" required="true" autofocus="true"/>
                     </label>
-                    <br/>
-                    <label for="username">Username
-                        <input type="text" id="username" name="username" placeholder="Username" required="false"/>
+                    <label for="username">Username:
+                        <input type="text" id="username" name="username" placeholder="Username" required="false"/>                    
                     </label>
-                    <br/>
-                    <label for="password">Password</label>
+                    <label for="password">Password:
                         <input type="password" id="password" name="password" placeholder="Password" required="true"/>
-                    <br/>
-                    <label for="password">Password</label>
-                        <input type="password" id="password" name="password" placeholder="Password (confirm)" required="true"/>
-                    <br/>
+                        <input type="password" id="password" name="password" placeholder="Confirm Password" required="true"/>
+                    </label>
                     <button type="submit">Register</button>
                 </form>
             </div>
@@ -144,3 +140,14 @@ export function Game() {
     </>
     );
   }
+
+  /*
+  <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Email" required="true" autofocus="true"/>
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Username" required="false"/>                    
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Password" required="true"/>
+                    <input type="password" id="password" name="password" placeholder="Confirm Password" required="true"/>
+                    <button type="submit">Register</button>
+                    */
