@@ -40,13 +40,13 @@ function Template(Component) {
   
 //  <Navigation menuTitle="Navigation Menu" />
 
-export function Welcome() {
+export function Welcome(app_config) {
     return (
         <>
         <div class = "grid_container_main">
             <div class="grid_template_header">
                 <h1>Welcome, dude</h1>
-                <NavigationMenu/>
+                <NavigationMenu config={app_config}/>
             </div>
             <div class="grid_template_content">
                 <Link to="/register" role="menuitem">Sign-Up</Link>

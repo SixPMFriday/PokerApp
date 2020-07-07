@@ -1,8 +1,34 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Route, BrowserRouter as Router } from "react-router-dom";
-
 import './index.css';
+
+
+/*
+const app_config = {
+  "navmenu": {
+      "text": "☰",
+      "content": [
+          {
+              "text": "home",
+              "link": "/"                
+          },
+          {
+              "text": "play",
+              "link": "/game"                
+          },
+          {
+              "text": "Register",
+              "link": "/register"                
+          },
+          {
+              "text": "Login",
+              "link": "/login"                
+          }
+      ]
+  }
+}
+*/
 
 import {
   Welcome,
@@ -21,6 +47,7 @@ function Routing() {
     </Router>
   );
 }
+
 
 ReactDOM.render(  
   <React.StrictMode>
