@@ -29,102 +29,143 @@ html {
   width: 100vw;
   height: 100vh;
   grid-template-columns: 
-    minmax(0.5rem, 1fr)
-    minmax(0.5rem, 1fr)
-    minmax(auto, 6fr) 
-    minmax(0.5rem, 1fr)
-    minmax(0.5rem, 1fr);
+    minmax(10px, 1fr)
+    repeat(6, minmax(5px, 200px))
+    minmax(10px, 1fr);
   grid-template-rows: 
     minmax(auto, 1fr)
-    minmax(60vh, 4fr)
+    minmax(auto, 4fr)
     minmax(1rem, 1.5rem); 
   grid-template-areas: 
-    ". h h h ."
-    ". . c . ."
-    "f f f f f";
+    ". h h h h h m ."
+    ". c c c c c c ."
+    "f f f f f f f f";
+}
+.grid_template_header { grid-area: h; }
+.grid_template_footer { grid-area: f; }
+.grid_template_content { grid-area: c; }
+.grid_template_menu { grid-area: m; }
+
+
+
+.navmenu_dropdown {
+  position: relative;
+  display: inline-block;
+}
+.navmenu_dropdown_button {
+  width: 50px;
+  border: 0;
+  color: #333;
+  cursor: pointer;
+  outline: 0;
+  font-size: 40px;
+}
+.navmenu_dropdown_content {
+  position: absolute;
+  top: 100%;
+  right: 100%;
+  width: max-content;
+  z-index: 2;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14);
+  background-color: white;
 }
 
-.grid_template_header {
-  grid-area: h;
-  
-  display: flex;
-  justify-content: space-between;
-
-  font-family: "Comic Sans MS";
-  font-weight: bolder;
-  -webkit-text-fill-color: #ff7d00; /* Will override color (regardless of order) */
-  -webkit-text-stroke-color: #2e1803;
-  
-  padding-top: 2rem;
-  padding-bottom: 1rem;
-  
-}
-
-.grid_template_footer {
-  grid-area: f;
-  
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: end;
-  align-items: center;
-  padding-right: 2%;
-
-  background-color: #162116;
-  
-  font-family: "Garamond";
-  color: white;
-  font-size: 0.75rem;
-}
-
-
-.grid_template_header > h1 {
-  align-self: end;
-
-  font-size: 4rem;
-  -webkit-text-stroke-width: 0.2rem;
-
-  text-shadow: -6px -5px 13px #453629;
-}
-
-.grid_template_header > .navmenu {
-  direction: rtl;
-  align-self: end;
-  
-  -webkit-text-stroke-width: 0.075rem;
-  
-  text-shadow: 4px -5px 11px #453629;
-}
-
-.grid_template_header > .navmenu > ul {
+.navmenu_dropdown_content_list {
+  list-style: none;
+  padding: 5px;
   font-weight: bold;
-  font-size: 1.2rem;
-  list-style-type: none;
+  font-size: 2rem;
 }
 
+.navmenu_dropdown_content_list > li:hover {
+  background-color: red;
+  cursor: pointer;
+}
+/*
 
+.navmenu_dropdown .navmenu_dropdown_button {
+  font-size: 2rem;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
 
-.grid_template_content {
-  grid-area: c;
+.navmenu_dropdown_content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  width: max-content;
+  background-color: #f9f9f9;
+  z-index: 2;
+}
+
+*/
+
+.navmenu_dropdown:hover .navmenu_dropdown_content {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-
-  font-family: "Comic Sans MS";
-  font-weight: light;
-  -webkit-text-fill-color: #ff7d00; /* Will override color (regardless of order) */
-  -webkit-text-stroke-color: #2e1803;
 }
 
-.grid_template_content > p {
-  padding: 2rem;
-  -webkit-text-fill-color: white; /* Will override color (regardless of order) */
-  background-color: lightslategrey;
-  border-radius: 30px 30px 30px 30px;
+/* Phone or Watch */
+/* Small screen, non-retina */
+@media only screen and (min-width: 480px) {
   
-  box-shadow: 0px
-   -5px 10px #453629;
 }
+
+/* Small screen, retina */
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2)      and (min-width: 480px),
+only screen and (   min--moz-device-pixel-ratio: 2)      and (min-width: 480px),
+only screen and (     -o-min-device-pixel-ratio: 2/1)    and (min-width: 480px),
+only screen and (        min-device-pixel-ratio: 2)      and (min-width: 480px),
+only screen and (                min-resolution: 192dpi) and (min-width: 480px),
+only screen and (                min-resolution: 2dppx)  and (min-width: 480px) { 
+
+}
+
+
+/* Tablet or Phone */
+/* Medium screen, non-retina */
+@media only screen and (min-width: 768px) {
+  
+}
+
+/* Medium screen, retina */
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2)      and (min-width: 768px),
+only screen and (   min--moz-device-pixel-ratio: 2)      and (min-width: 768px),
+only screen and (     -o-min-device-pixel-ratio: 2/1)    and (min-width: 768px),
+only screen and (        min-device-pixel-ratio: 2)      and (min-width: 768px),
+only screen and (                min-resolution: 192dpi) and (min-width: 768px),
+only screen and (                min-resolution: 2dppx)  and (min-width: 768px) { 
+
+}
+
+
+/* Large screen, non-retina */
+@media only screen and (min-width: 1300px) {
+  
+}
+
+/* Large screen, retina */
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2)      and (min-width: 1300px),
+only screen and (   min--moz-device-pixel-ratio: 2)      and (min-width: 1300px),
+only screen and (     -o-min-device-pixel-ratio: 2/1)    and (min-width: 1300px),
+only screen and (        min-device-pixel-ratio: 2)      and (min-width: 1300px),
+only screen and (                min-resolution: 192dpi) and (min-width: 1300px),
+only screen and (                min-resolution: 2dppx)  and (min-width: 1300px) { 
+
+}
+
+
+
+
+
+/*  BUTTONS */
+
 .home_signup_login_buttons {
   width: 100%;
   padding-top: 15px;
@@ -210,3 +251,72 @@ input {
 }
 
  
+
+/* FORMATTING */
+
+
+.grid_template_header {
+  display: flex;
+  justify-content: space-between;
+
+  font-family: "Comic Sans MS";
+  font-weight: bolder;
+  -webkit-text-fill-color: #ff7d00; /* Will override color (regardless of order) */
+  -webkit-text-stroke-color: #2e1803;
+
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+}
+
+
+.grid_template_footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 10px;
+
+  background-color: #162116;
+  
+  font-family: "Garamond";
+  color: white;
+  font-size: 0.75rem;
+}
+
+.grid_template_header > h1 {
+  align-self: flex-end;
+
+  font-size: 4rem;
+  -webkit-text-stroke-width: 0.2rem;
+
+  text-shadow: -6px -5px 13px #453629;
+}
+
+.grid_template_menu {
+  color: none;
+  align-self: center;
+  justify-self: end;
+}
+
+
+.grid_template_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+
+  font-family: "Comic Sans MS";
+  font-weight: light;
+  -webkit-text-fill-color: #ff7d00; /* Will override color (regardless of order) */
+  -webkit-text-stroke-color: #2e1803;
+}
+
+.grid_template_content > p {
+  padding: 2rem;
+  -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+  background-color: lightslategrey;
+  border-radius: 30px 30px 30px 30px;
+  
+  box-shadow: 0px
+   -5px 10px #453629;
+}
