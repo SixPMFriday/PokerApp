@@ -1,11 +1,16 @@
 import React from 'react';
-import { Route, Link, BrowserRouter as Router } from "react-router-dom";
+import { Link } from "react-router-dom";
 
+
+// Navigation Menu
+// Would like to update this so that it populates via config 
 class NavigationMenu extends React.Component {
     container = React.createRef();
     state = {
         open: false,
     };
+
+    // Binds and unbinds listeners to the DOM
     componentDidMount() {
         document.addEventListener("mousedown", this.handleClickOutside);
     }
@@ -13,6 +18,7 @@ class NavigationMenu extends React.Component {
         document.removeEventListener("mousedown", this.handleClickOutside);
     }
 
+    // Closes menu if user clicks outside menu
     handleClickOutside = event => {
         if (this.container.current && !this.container.current.contains(event.target)) {
             this.setState({
@@ -21,6 +27,7 @@ class NavigationMenu extends React.Component {
         }
     };
     
+    // Why don't we need to bind and unbind button click?
     handleButtonClick = () => {
         this.setState(state => {
             return {
@@ -172,22 +179,25 @@ export function Login() {
       <>
         <div className="grid_template_main">
             <div className="grid_template_header">
-                <h1>Login</h1>
+                <h1>Play Like a Champ!</h1>
             </div>
             <div className="grid_template_menu">
                 <NavigationMenu/>
             </div>
             <div className="grid_template_content">
+                <h2>Login</h2>
                 <form method="POST">
-                    <label for="email">Email:
-                        <input type="email" id="email" name="email" placeholder="Email" required="true" autofocus="true"/>
-                    </label>
-                    <label for="username">Username:
-                        <input type="text" id="username" name="username" placeholder="Username" required="false"/>
-                    </label>
-                    <label for="password">Password:
-                        <input type="password" id="password" name="password" placeholder="Password" required="true"/>
-                    </label>
+                    <div class="form_input" validation="email_or_username">
+                        <input type="text" 
+                            placeholder="Username or Email" 
+                            required="true"
+                            autofocus="true"/>
+                    </div>
+                    <div class="form_input" validation="password">
+                        <input type="password" 
+                            placeholder="Password" 
+                            required="true"/>
+                    </div>
                     <button type="submit">Sign In</button>
                 </form>
             </div>
@@ -205,23 +215,35 @@ export function Register() {
     <>
         <div className="grid_template_main">
             <div className="grid_template_header">
-                <h1>Sign Up!</h1>
+                <h1>Play Like a Champ!</h1>
             </div>
             <div className="grid_template_menu">
                 <NavigationMenu/>
             </div>
             <div className="grid_template_content">
+                <h2>Register to Play!</h2>
                 <form method="POST">
-                    <label for="email">Email:
-                        <input type="email" id="email" name="email" placeholder="Email" required="true" autofocus="true"/>
-                    </label>
-                    <label for="username">Username:
-                        <input type="text" id="username" name="username" placeholder="Username" required="false"/>                    
-                    </label>
-                    <label for="password">Password:
-                        <input type="password" id="password" name="password" placeholder="Password" required="true"/>
-                        <input type="password" id="password" name="password" placeholder="Confirm Password" required="true"/>
-                    </label>
+                    <div class="form_input" validation="email">
+                        <input type="email"
+                            placeholder="Email" 
+                            required="true" 
+                            autofocus="true"/>
+                    </div>
+                    <div class="form_input" validation="username">
+                        <input type="text" 
+                            placeholder="Username" 
+                            required="true"/>                    
+                    </div>
+                    <div class="form_input" validation="password">
+                        <input type="password" 
+                            placeholder="Password" 
+                            required="true"/>
+                    </div>    
+                    <div class="form_input" validation="password_redundant">
+                        <input type="password" 
+                            placeholder="Confirm Password" 
+                            required="true"/>
+                    </div>
                     <button type="submit">Register</button>
                 </form>
             </div>
