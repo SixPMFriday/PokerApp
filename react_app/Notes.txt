@@ -81,3 +81,68 @@ Adding SSL Certificate to PAge:
 - https://blog.hubspot.com/marketing/what-is-ssl
 - "Let's Encrypt offers certificates at no cost, but I would strongly recommend that you have someone knowledgeable about the DNS and technical setup of your website to help."
     - https://letsencrypt.org/
+
+
+
+
+
+Misc App Config Notes
+
+/*
+{
+  "nav": {
+      "menu_label": "☰",
+      "routes": [
+          {
+              "link": "/",  
+              "menu_text": "welcome",
+              "component": "Welcome"
+          },
+          {
+              "link": "/game",
+              "menu_text": "play",
+              "component": "GamePage"      
+          },
+          {
+              "link": "/register",   
+              "menu_text": "register",
+              "component": "Register"       
+          },
+          {
+              "link": "/login",
+              "menu_text": "login",       
+              "component": "Login"        
+          }
+      ]
+  },
+  "base": {
+      // HMC: header menu content
+      "layout": "responsive-grid-HMC", 
+      "areas": { 
+        // All of these must be defined in each route component
+          "header": "title",
+          "menu": "nav",
+          "content": "content"
+      }
+  }
+
+
+}
+
+*/
+
+// Write the following components
+
+// Route components (page components)
+// In these components users specify all named content
+// All components extend base
+//  Welcome
+//  Game
+//  Register
+//  Login
+// 
+//  title
+// 
+//  Boilerplate components (std workflow is user specifies some)
+//  nav
+
